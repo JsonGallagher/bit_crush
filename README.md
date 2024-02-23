@@ -2,6 +2,10 @@
 
 This Python project allows you to apply psychedelic effects to images using various techniques such as channel shifts and wave distortions.
 
+## Example output
+
+![Example Image](example.jpeg)
+
 ## Features
 
 - Apply channel shifts to create psychedelic effects

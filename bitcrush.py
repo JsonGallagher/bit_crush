@@ -36,6 +36,6 @@ def psychedelic_effect(image_path, output_path):
 
 # Update these paths for your specific use case
 image_path = "/Users/bgmarketing/Desktop/bit_crush/img_polaroid.jpg"
-output_path = "/Users/bgmarketing/Desktop/bit_crush/img_polaroid-crushed.jpeg"
+output_path = "/Users/bgmarketing/Desktop/bit_crush/outputs/img_polaroid-crushed.jpeg"
 
 psychedelic_effect(image_path, output_path)

@@ -1,7 +1,8 @@
 from PIL import Image, ImageChops, ImageFilter
 import numpy as np
+import os
 
-def psychedelic_effect(image_path, output_path):
+def psychedelic_effect(image_path, output_dir):
     # Open the original image
     img = Image.open(image_path)
     
@@ -19,7 +20,7 @@ def psychedelic_effect(image_path, output_path):
     # Recombine the channels
     img_psychedelic = Image.merge('RGB', (r, g, b))
     
-    # Apply wave distortion with a more susource venv/bin/activatebtle effect
+    # Apply wave distortion with a more subtle effect
     np_img = np.array(img_psychedelic)
     x = np.arange(np_img.shape[1])
 
@@ -31,11 +32,22 @@ def psychedelic_effect(image_path, output_path):
     
     img_psychedelic = Image.fromarray(np_img)
     
+    # Generate unique output filename
+    output_filename = generate_unique_filename(output_dir, 'image-crushed', 'jpeg')
+    
     # Save the psychedelic image
-    img_psychedelic.save(output_path)
+    img_psychedelic.save(output_filename)
+
+def generate_unique_filename(output_dir, base_filename, extension):
+    counter = 1
+    while True:
+        output_filename = os.path.join(output_dir, f"{base_filename}-{counter:03d}.{extension}")
+        if not os.path.exists(output_filename):
+            return output_filename
+        counter += 1
 
 # Update these paths for your specific use case
-image_path = "/Users/bgmarketing/Desktop/bit_crush/img_polaroid.jpg"
-output_path = "/Users/bgmarketing/Desktop/bit_crush/outputs/img_polaroid-crushed.jpeg"
+image_path = "/Users/bgmarketing/Desktop/bit_crush/image.jpg"
+output_dir = "/Users/bgmarketing/Desktop/bit_crush/outputs"
 
-psychedelic_effect(image_path, output_path)
+psychedelic_effect(image_path, output_dir)

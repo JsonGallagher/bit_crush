@@ -1,6 +1,6 @@
 # Python Photo Manipulation Project
 
-This Python project allows you to apply psychedelic effects to images using various techniques such as channel shifts and wave distortions.
+This Python project allows you to apply psychedelic effects to images using various techniques such as channel shifts, wave distortions, and generating unique output filenames.
 
 ## Example output
 
@@ -8,9 +8,10 @@ This Python project allows you to apply psychedelic effects to images using vari
 
 ## Features
 
-- Apply channel shifts to create psychedelic effects
-- Soften the image with Gaussian blur (commented out by default)
-- Apply wave distortion for a psychedelic wave effect
+- Separate color channels and apply channel shifts to create psychedelic effects. The red and green channels are shifted by 250 pixels, and the blue channel is subtly shifted by 20 pixels to achieve a unique psychedelic effect.
+- Utilize wave distortion with adjustable amplitude and frequency for a custom psychedelic wave effect. This effect has been fine-tuned to be more subtle, making the visual experience more pleasant.
+- Generate unique output filenames for each processed image, ensuring that new effects do not overwrite previous ones.
+- Option to apply a Gaussian blur is available but commented out by default. Users can easily enable this feature by uncommenting the relevant line.
 
 ## Requirements
 
@@ -20,7 +21,7 @@ This Python project allows you to apply psychedelic effects to images using vari
 
 ## Usage
 
-1. Clone the repository or download the `psychedelic.py` script.
+1. Clone the repository or download the `bitcrush.py` script.
 
 2. Ensure you have Python 3.x installed on your system.
 
@@ -30,23 +31,19 @@ This Python project allows you to apply psychedelic effects to images using vari
    pip install pillow numpy
    ```
 
-4. Run the script with the following command:
+4. Update the `image_path` and `output_dir` variables in the script to match your desired input image and output directory.
 
-   ```python
-   python psychedelic.py
-   ```
-
-5. Follow the instructions provided by the script to apply psychedelic effects to your images.
+5. Run the script to apply the psychedelic effects to your image. The script will automatically save the processed image with a unique filename in the specified output directory.
 
 ## Sample Usage
 
-You can replace `image_path` and `output_path` variables in the script with your desired image input and output paths.
+To use the script, simply set the `image_path` and `output_dir` variables to your desired input and output locations, respectively. Here is an example:
 
 ```python
 image_path = "/path/to/your/image.jpg"
-output_path = "/path/to/save/psychedelic_image.jpg"
+output_dir = "/path/to/your/output/directory"
 
-psychedelic_effect(image_path, output_path)
+psychedelic_effect(image_path, output_dir)
 ```
 
 ## Contributors
@@ -55,4 +52,4 @@ psychedelic_effect(image_path, output_path)
 
 ## License
 
-This project is licensed under the MIT License 
+This project is licensed under the MIT License.
